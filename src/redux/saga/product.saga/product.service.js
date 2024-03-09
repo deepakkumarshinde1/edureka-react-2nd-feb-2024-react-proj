@@ -1,6 +1,7 @@
+let BASE_URL = process.env.REACT_APP_API_URL;
 export const getProductCategoriesService = async () => {
   console.log("service");
-  let url = `http://128.199.18.34:3001/categories`;
+  let url = `${BASE_URL}/categories`;
   let options = {
     method: "GET",
   };
@@ -10,7 +11,7 @@ export const getProductCategoriesService = async () => {
 
 export const getProductDataService = async (cat_name) => {
   cat_name = cat_name.replaceAll("-", " ");
-  const url = `http://128.199.18.34:3001/products?category=${cat_name}`;
+  const url = `${BASE_URL}/products?category=${cat_name}`;
   const options = {
     method: "GET",
   };
